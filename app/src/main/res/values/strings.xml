@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Placemark</string>
     <string name="hint_placemarkTitle">Placemark Title</string>
+    <string name="description">Description</string>
     <string name="button_addPlacemark">Add Placemark</string>
+    <string name="message">toastMessage</string>
 </resources>
