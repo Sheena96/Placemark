@@ -32,7 +32,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger
                 toast ("Please Enter a title")
             }
             if (placemark.description.isNotEmpty()) {
-                info("add Button Pressed: $placemark")
+                info("add Button Pressed: $description")
             }
             else {
                 toast ("Please Enter a description")
