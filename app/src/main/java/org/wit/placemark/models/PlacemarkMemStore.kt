@@ -1,11 +1,27 @@
-/*package org.wit.placemark.models
+package org.wit.placemark.models
+
+import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 
 /**
  * Created by sheenakelly on 24/01/2018.
  */
-class PlacemarkMemStore  {
+class PlacemarkMemStore : PlacemarkStore, AnkoLogger {
 
-    fun findAll(): List<PlacemarkModel> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    val placemarks = ArrayList<PlacemarkModel>()
+
+    override fun findAll(): List<PlacemarkModel> {
+        return placemarks
     }
-}*/
+
+    override fun create(placemark: PlacemarkModel) {
+        placemarks.add(placemark)
+        logPlacemarks()
+
+    }
+
+    fun logPlacemarks() {
+        findAll().forEach{ info("add Button Pressed: ${it}") }
+    }
+
+}

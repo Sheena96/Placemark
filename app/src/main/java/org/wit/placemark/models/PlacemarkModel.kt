@@ -6,9 +6,6 @@ package org.wit.placemark.models
 
 data class PlacemarkModel(var title: String = "", var description: String = "")
 
-/*interface PlacemarkStore {
-    fun findAll(): List<PlacemarkModel>
-    fun create(placemark: PlacemarkModel)
-}*/
+
 
 

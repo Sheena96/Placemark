@@ -24,9 +24,9 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             placemark.title = placemarkTitle.text.toString()
             placemark.description = description.text.toString()
             if (placemark.title.isNotEmpty()) {
-                app.placemarks.add(placemark.copy())
+                app.placemarkStore.create(placemark.copy())
                 info("add Button Pressed: $placemark")
-                app.placemarks.forEach { info("add Button Pressed: ${it}") }
+                //app.placemarkStore.findAll().forEach{ info("add Button Pressed: ${it}") }
                 setResult(AppCompatActivity.RESULT_OK)
                 finish()
             } else {
@@ -35,7 +35,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
         }
 
         btnCancel.setOnClickListener() {
-            app.placemarks.forEach { info("Canel Button Pressed ") }
+            info("Canel Button Pressed ")
             Intent(this, PlacemarkListActivity::class.java)
             setResult(AppCompatActivity.RESULT_CANCELED)
             finish()
