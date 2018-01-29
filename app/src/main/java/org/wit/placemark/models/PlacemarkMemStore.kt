@@ -3,9 +3,12 @@ package org.wit.placemark.models
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 
-/**
- * Created by sheenakelly on 24/01/2018.
- */
+var lastId = 0L
+
+internal fun getId(): Long {
+    return lastId++
+}
+
 class PlacemarkMemStore : PlacemarkStore, AnkoLogger {
 
     val placemarks = ArrayList<PlacemarkModel>()
@@ -15,13 +18,21 @@ class PlacemarkMemStore : PlacemarkStore, AnkoLogger {
     }
 
     override fun create(placemark: PlacemarkModel) {
+        placemark.id = getId()
         placemarks.add(placemark)
-        logPlacemarks()
-
+        logAll()
     }
 
-    fun logPlacemarks() {
-        findAll().forEach{ info("add Button Pressed: ${it}") }
+    override fun update(placemark: PlacemarkModel) {
+        var foundPlacemark: PlacemarkModel? = placemarks.find { p -> p.id == placemark.id }
+        if (foundPlacemark != null) {
+            foundPlacemark.title = placemark.title
+            foundPlacemark.description = placemark.description
+        }
+    }
+
+    internal fun logAll() {
+        placemarks.forEach { info("${it}") }
     }
 
 }
