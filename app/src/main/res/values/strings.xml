@@ -6,4 +6,5 @@
     <string name="message">toastMessage</string>
     <string name="menu_addPlacemark">Add</string>
     <string name="button_cancelPlacemark">Cancel</string>
+    <string name="button_savePlacemark">Cancel</string>
 </resources>

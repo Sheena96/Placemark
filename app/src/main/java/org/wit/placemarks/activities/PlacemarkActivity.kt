@@ -22,8 +22,12 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
 
         if (intent.hasExtra("placemark_edit")) {
             placemark = intent.extras.getParcelable<PlacemarkModel>("placemark_edit")
+            btnAdd.text = "save"
             placemarkTitle.setText(placemark.title)
             description.setText(placemark.description)
+        }
+        else {
+            btnAdd.text = "Add"
         }
 
         btnAdd.setOnClickListener() {
