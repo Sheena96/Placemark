@@ -5,6 +5,8 @@
     <string name="button_addPlacemark">Add Placemark</string>
     <string name="message">toastMessage</string>
     <string name="menu_addPlacemark">Add</string>
-    <string name="button_cancelPlacemark">Cancel</string>
+    <string name="menu_cancelPlacemark">Cancel</string>
     <string name="button_savePlacemark">Cancel</string>
+    <string name="save_placemark"> Save Placemark </string>
+    <string name="enter_placemark_title"> Please enter a Placemark Title </string>
 </resources>
