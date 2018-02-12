@@ -8,6 +8,7 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_placemark.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.jetbrains.anko.intentFor
 import org.wit.placemark.R
 import org.jetbrains.anko.toast
 import org.wit.placemark.helpers.readImage
@@ -70,6 +71,10 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
 
         chooseImage.setOnClickListener {
             showImagePicker(this, IMAGE_REQUEST)
+        }
+
+        placemarkLocation.setOnClickListener {
+            startActivity (intentFor<MapsActivity>())
         }
 
     }
